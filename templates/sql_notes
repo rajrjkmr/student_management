@@ -1,0 +1,1 @@
+CREATE TABLE login(s_no int AUTO INCREMENT NOT NULL ,name varchar(30),password varchar(30),email varchar(50),college varchar(80),date varchar(20),gender varchar(10),contact_no number(15,file varchar(30));

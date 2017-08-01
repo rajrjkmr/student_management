@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+		p{
+   white-space:pre-wrap;
+}
+	</style>
+	<title>
+	
+		commend box
+	</title>
+</head>
+<body>
+<nav class="navbar navbar-default" style="background-color:#716279;color: white;">
+<div class="container">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="color: white;" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a style="color: white;" href="/command">Command</a></li>
+        <li><a  data-toggle="modal" data-target="#myModal" style="color: white;" href="#">Profile</a></li>
+        <li><a style="color: white;" href="/logout">Logout</a></li>
+        <li><a style="color: white;" href="/about">About</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+  <!-- Modal -->
+
+
+</div>
+</nav>
+<div class="row">
+  <div class="col-sm-3" style="background-color:#5b6677;color: white;">
+  <table class="table">
+  <tbody>
+  <tr><th>GLUG MEMBER</th></tr>
+{% for user in user %}
+    <tr>
+      <th>
+        {{user[1]}}
+      </th>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+  </table>
+    
+  </div>
+</div>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="color: black;">USER Details....!</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table" style="color: black;">
+  
+  <tbody >
+    <tr class="info" style="text-align: middle;"><th  >USER NAME:</th><td>{{data[1]}}</td></tr>
+    <tr class="info"><th>EMAIL:</th><td>{{data[3]}}</td></tr>
+    <tr class="info"><th>COLLEGE:</th><td>{{data[4]}}</td></tr>
+    <tr class="info"><th>DOB:</th><td >{{data[5]}}</td></tr>
+    <tr class="info"><th>GENDER:</th><td>{{data[6]}}</td></tr>   
+    <tr class="info"><th>PHONE NO:</th><td>{{data[7]}}</td></tr>
+    <tr class="info"><th width="30%">PASSWORD:</th><td>{{data[2]}}</td></tr>
+  </tbody>
+  
+</table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+</body>
+</html>

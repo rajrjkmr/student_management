@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+    p{
+   white-space:pre-wrap;
+}
+  </style>
+  <title>
+  
+    commend box
+  </title>
+</head>
+<body style="background-color:#716279;">
+<div class="container">
+<div class="row">
+<center>
+  <form action="/store" method="POST">
+  <div class="form-group">
+  <textarea class="form-control" rows="4" placeholder="Enter commend???" name="data"></textarea>
+
+  <input type="submit" class="btn btn-primary" value="submit"></input>
+
+</form>
+</div>
+<div class="row">
+<div class="table-responsive">
+<table class="table table-condensed">
+
+{% for da in data %}
+<thead>
+<tr class="success"><th  colspan="3"><pre>{{da[1]}}</pre>
+  </th></tr> 
+  
+  <tr >
+    <th class="col-sm-4 "  ><a href="/dlike/{{da[0]}}">{{da[4]}}
+          <span class="glyphicon glyphicon-thumbs-down"></span>
+        </a></th>
+        <th class="col-sm-4" ><a href="/like/{{da[0]}}">{{da[3]}}
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+      
+        </a></th>
+        <th class="col-sm-4" >
+          <span class="glyphicon glyphicon-time">{{da[2]}}</span>
+        </a></th>
+  </tr>
+  </thead>
+</div>
+
+{% endfor %}
+</div>
+</table>
+
+
+</center>
+</div>
+</div>
+</div>
+
+</body>
+</html>
